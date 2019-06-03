@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore, @typescript-eslint/no-explicit-any */
 import React, { Fragment, ReactElement, useEffect, useState } from 'react';
-import base64 from 'base-64';
 import { STORY_CHANGED, STORY_RENDERED } from '@storybook/core-events';
-import fetch from 'node-fetch';
 // @ts-ignore
 import { Placeholder } from '@storybook/components';
 
@@ -20,11 +18,11 @@ interface Props {
 }
 
 const getContentById = (config: APIConfig, id: string) => {
-    const expanders = ['body.storage', 'version'];
-    
     return fetch(`${ config.domain }/rest/api/content/${ id }?expand=${ expanders.join() }`, {
+        method: 'GET',
         headers: {
-            Authorization: `Basic ${ base64.encode(`${ config.username }:${ config.password }`) }`,
+            Authorization: `Basic ${ btoa(`${ config.username }:${ config.password }`) }`,
+            'Content-Type': 'application/json',
         },
     });
 };
