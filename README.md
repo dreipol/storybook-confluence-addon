@@ -12,7 +12,7 @@ This addon was designed and tested only in a react environment.
 # Installation
 
 ```bash
-npm i @dreipol/storybook-confluence-addon storybook-addon-designs -D
+npm i @dreipol/storybook-confluence-addon -D
 ```
 
 # Usage
@@ -38,7 +38,7 @@ npm i @dreipol/storybook-confluence-addon storybook-addon-designs -D
         'Default',
         () => <ComponentExample/>,
         {
-            // one or more confluence image ids concatenated via commas
+          // the id of the confluence page we want to fetch
           confluence: { 
              id: 'foo',
           },
@@ -54,7 +54,7 @@ npm i @dreipol/storybook-confluence-addon storybook-addon-designs -D
 [npm-version-image]: http://img.shields.io/npm/v/@dreipol/storybook-confluence-addon.svg?style=flat-square
 [npm-downloads-image]: http://img.shields.io/npm/dm/@dreipol/storybook-confluence-addon.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/@dreipol/storybook-confluence-addon
-[codeclimate-image]: https://api.codeclimate.com/v1/badges/fb8c4a8a6043d9e73f7f/maintainability
+[codeclimate-image]: https://api.codeclimate.com/v1/badges/8d977f051efffb8ef19c/maintainability
 [codeclimate-url]: https://codeclimate.com/github/dreipol/storybook-confluence-addon/maintainability
 
 
