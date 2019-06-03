@@ -18,7 +18,7 @@ interface Props {
 }
 
 const getContentById = (config: APIConfig, id: string) => {
-    return fetch(`${ config.domain }/rest/api/content/${ id }?expand=${ expanders.join() }`, {
+    return fetch(`${ config.domain }/rest/api/content/${ id }?expand=body.storage`, {
         method: 'GET',
         headers: {
             Authorization: `Basic ${ btoa(`${ config.username }:${ config.password }`) }`,
@@ -57,7 +57,9 @@ export default function ConfluencePanel({ api, active, channel }: Props): ReactE
             
             if (id && apiConfig) {
                 const res = await getContentById(apiConfig, id);
-                setHTML(await res.text());
+                const json = await res.json();
+                
+                setHTML(json.body.storage.value);
             }
         };
         
