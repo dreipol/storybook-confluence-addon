@@ -21,7 +21,7 @@
         "@storybook/channels": "^5.0.11",
         "@storybook/components": "^5.0.11",
         "@storybook/core-events": "^5.0.11",
-        "lodash": "^4.17.13"
+        "lodash": "^4.17.21"
     },
     "devDependencies": {
         "@dreipol/eslint-config": "^6.0.4",
